@@ -8,15 +8,17 @@ const Warehouses =  () => {
 	useEffect(() => {
         if(warehouses.length === 0) {
             fetchData().then(response => {
-                setWarehouses(response.data);
+                setWarehouses(response.data.cars);
             })
         }
     }, [warehouses]);
     
     return warehouses && warehouses.map((warehouse, index) => {
         return <div className="header">
-            {warehouses[index].name}
-        </div>;
+             {warehouses[index].make} 
+             {warehouses[index].model}
+              {warehouses[index].year_model}
+            </div>;
     });
 
 }

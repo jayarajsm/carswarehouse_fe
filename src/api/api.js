@@ -1,7 +1,7 @@
 
 import axios from 'axios';
 
-const url = 'http://localhost:8080/warehouse/all';
+const url = 'http://localhost:8080/warehouse/allCars';
 
 export const fetchData = async () => 
 {
