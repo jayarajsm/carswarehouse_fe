@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import { fetchData } from "../api/api";
+import Cars from './Cars';
 
 const Warehouses =  () => {
 
@@ -12,14 +13,8 @@ const Warehouses =  () => {
             })
         }
     }, [warehouses]);
-    
-    return warehouses && warehouses.map((warehouse, index) => {
-        return <div className="header">
-             {warehouses[index].make} 
-             {warehouses[index].model}
-              {warehouses[index].year_model}
-            </div>;
-    });
 
+
+    return warehouses && <Cars {...{cars: warehouses}}/>;
 }
 export default Warehouses;
